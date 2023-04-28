@@ -76,19 +76,19 @@ app.post('/api/subscribe', async (req, res) => {
 
 
 // Serve static files from the 'public' directory
-const clientPath = path.join(__dirname, 'client');
-app.use(express.static(clientPath));
+app.use(express.static('public'));
 
-// Serve the coming.html file as the root route
+// Serve the index.html file as the root route
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client', 'bbwe', 'index.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Serve the SVG files with sendFile()
-app.get('/images/*', (req, res) => {
-  const filePath = path.join(__dirname, 'client', 'bbwe', req.params[0]);
+// Serve the SVG and PNG files with sendFile()
+app.get('/images/*.(svg|png)', (req, res) => {
+  const filePath = path.join(__dirname, 'images', req.params[0]);
   res.sendFile(filePath);
 });
+
 
 
 // Start the server
