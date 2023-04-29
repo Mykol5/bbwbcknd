@@ -46,7 +46,7 @@ app.post('/api/subscribe', async (req, res) => {
   // Compose and send a "New subscriber" email to your own email address
   const newSubscriberMailOptions = {
     from: 'michaelkolawole25@gmail.com', // Replace with your email address
-    to: 'info@blackbritishwomenexist.com', // Your email address
+    to: 'michaelkolawole25@gmail.com', // Your email address
     subject: 'New subscriber!', // Subject of the email
     text: `You have a new subscriber! Email: ${email}` // Body of the email
   };
